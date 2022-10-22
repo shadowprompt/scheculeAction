@@ -1,0 +1,14 @@
+on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '5 * * * *'
+jobs:
+  test_schedule:
+    runs-on: ubuntu-latest
+    steps:
+      - id: step1
+        name: Do daozhaoActionWait
+        uses: shadowprompt/daozhaoAction/@main
+        with:
+          # number of milliseconds to wait
+          milliseconds: 15000
