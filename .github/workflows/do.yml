@@ -1,3 +1,5 @@
+name: Do
+
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
@@ -15,3 +17,5 @@ jobs:
         with:
           # number of milliseconds to wait
           milliseconds: 15000
+      - run: |
+          echo ${{steps.step1.outputs.time}}
