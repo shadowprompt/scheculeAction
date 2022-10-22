@@ -2,8 +2,8 @@ name: Do
 
 on:
   schedule:
-    # * is a special character in YAML so you have to quote this string
-    - cron:  '5 * * * *'
+    # * 每5分钟一次
+    - cron:  '*/5 * * * *'
   push:
     branches:
       - main  # default branch
