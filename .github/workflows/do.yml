@@ -3,12 +3,12 @@ name: Do
 on:
   schedule:
     # * 每5分钟一次
-    - cron:  '*/5 * * * *'
+    - cron:  '/15 * * * *'
   push:
     branches:
       - main  # default branch
 jobs:
-  test_schedule:
+  do_schedule:
     runs-on: ubuntu-latest
     steps:
       - id: step1
