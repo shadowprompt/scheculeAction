@@ -19,3 +19,8 @@ jobs:
           milliseconds: 15000
       - run: |
           echo ${{steps.step1.outputs.time}}
+      - id: step2
+        name: Do crawlAction
+        uses: shadowprompt/crawl/@main
+      - run: |
+          echo ${{steps.step2.outputs.crawlResult}}
