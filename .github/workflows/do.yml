@@ -24,5 +24,6 @@ jobs:
         uses: shadowprompt/crawl/@main
         with:
           timeout: 10000
+          handlerPath: shanghai/recruitment/pdggzp
       - run: |
           echo ${{steps.step2.outputs.crawlResult}}
