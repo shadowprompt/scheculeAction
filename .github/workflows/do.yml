@@ -3,7 +3,7 @@ name: Do
 on:
   schedule:
     # * 每5分钟一次
-    - cron:  '0/15 * * * *'
+    - cron:  '* 0/12 * * *'
   push:
     branches:
       - main  # default branch
