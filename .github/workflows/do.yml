@@ -27,8 +27,11 @@ jobs:
           ssh-key: ${{ secrets.SHADOW_TOKEN }}
           repository: shadowprompt/crawl
           path: ./.github/actions/crawlAction
-      - name: run crawlAction
+      - id: step2
+        name: run crawlAction
         uses: ./.github/actions/crawlAction
         with:
           timeout: 10000
           handlerPath: shanghai/house/gycqbzf
+      - run: |
+          echo ${{steps.step2.outputs.crawlResult}}
