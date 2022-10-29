@@ -15,4 +15,5 @@ jobs:
         run: |
           echo ${{secrets.SHADOW_TOKEN}}
           echo "---"
+      - name: echo 
           echo ${{secrets.ACCESS_TOKEN}}
