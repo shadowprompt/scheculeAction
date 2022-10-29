@@ -7,6 +7,9 @@ on:
   workflow_dispatch:
     branches:
       - main
+  push:
+    branches:
+      - main  # default branch
 jobs:
   do_schedule:
     runs-on: ubuntu-latest
