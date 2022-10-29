@@ -13,8 +13,22 @@ jobs:
     steps:
       - name: echo token
         run: |
-          echo ${{secrets.SHADOW_TOKEN}}
-          echo "---"
-      - name: echo 
-        run: |
-          echo ${{secrets.ACCESS_TOKEN}}
+          echo "---my SHADOW_TOKEN"
+      - id: step1
+        name: Do daozhaoActionWait
+        uses: shadowprompt/daozhaoAction/@main
+        with:
+          # number of milliseconds to wait
+          milliseconds: 15000
+           # Personal access token to check out private repository
+          token: ${{ secrets.SHADOW_TOKEN }}
+      - run: |
+          echo ${{steps.step1.outputs.time}}
+      - id: step2
+        name: Do crawlAction
+        uses: shadowprompt/crawl/@main
+        with:
+          timeout: 10000
+          handlerPath: shanghai/house/gycqbzf
+      - run: |
+          echo ${{steps.step2.outputs.crawlResult}}
