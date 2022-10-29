@@ -14,21 +14,22 @@ jobs:
       - name: echo token
         run: |
           echo "---my SHADOW_TOKEN"
-      - id: step1
-        name: Do daozhaoActionWait
+      - name: Do daozhaoActionWait
+        id: step1
         uses: shadowprompt/daozhaoAction/@main
         with:
           # number of milliseconds to wait
           milliseconds: 15000
       - run: |
           echo ${{steps.step1.outputs.time}}
-      - uses: actions/checkout@v2
+      - name: checkout crawlAction
+        uses: actions/checkout@v2
         with:
           ssh-key: ${{ secrets.SHADOW_TOKEN }}
           repository: shadowprompt/crawl
           path: ./.github/actions/crawlAction
-      - id: step2
-        name: run crawlAction
+      - name: run crawlAction
+        id: step2
         uses: ./.github/actions/crawlAction
         with:
           timeout: 10000
