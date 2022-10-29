@@ -20,15 +20,8 @@ jobs:
         with:
           # number of milliseconds to wait
           milliseconds: 15000
-           # Personal access token to check out private repository
-          token: ${{ secrets.SHADOW_TOKEN }}
       - run: |
           echo ${{steps.step1.outputs.time}}
-      - id: step2
-        name: Do crawlAction
-        uses: shadowprompt/crawl/@main
+      - uses: actions/checkout@v2
         with:
-          timeout: 10000
-          handlerPath: shanghai/house/gycqbzf
-      - run: |
-          echo ${{steps.step2.outputs.crawlResult}}
+          ssh-key: ${{ secrets.SHADOW_TOKEN }}
