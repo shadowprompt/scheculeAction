@@ -33,6 +33,6 @@ jobs:
         uses: ./.github/actions/crawlAction
         with:
           timeout: 10000
-          handlerPath: shanghai/house/gycqbzf
+          handlerPath: shanghai/house/gycqbzf/error
       - run: |
           echo ${{steps.step2.outputs.crawlResult}}
