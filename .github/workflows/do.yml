@@ -37,7 +37,7 @@ jobs:
       - run: |
           echo ${{steps.step2.outputs.crawlResult}}
       - name: run notifyAction
-        uses: shadowprompt/notifyAction/@main
+        uses: daoAction/notify/@main
         with:
           ids: B8iCEDHuKodPxfMj554qhm
           body: ${{steps.step2.outputs.crawlError}}
