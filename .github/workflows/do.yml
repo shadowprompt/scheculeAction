@@ -40,4 +40,4 @@ jobs:
         uses: shadowprompt/notifyAction/@main
         with:
           ids: B8iCEDHuKodPxfMj554qhm
-          body: ${{steps.step2.outputs.crawlResult}}
+          body: ${{steps.step2.outputs.crawlError}}
