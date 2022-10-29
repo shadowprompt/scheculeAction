@@ -17,6 +17,8 @@ jobs:
         with:
           # number of milliseconds to wait
           milliseconds: 15000
+           # Personal access token to check out private repository
+          token: ${{ secrets.ACCESS_TOKEN }}
       - run: |
           echo ${{steps.step1.outputs.time}}
       - id: step2
