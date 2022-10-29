@@ -23,7 +23,7 @@ jobs:
       - run: |
           echo ${{steps.step1.outputs.time}}
       - name: checkout crawlAction
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           ssh-key: ${{ secrets.SHADOW_TOKEN }}
           repository: shadowprompt/crawl
