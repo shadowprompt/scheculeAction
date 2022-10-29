@@ -4,6 +4,9 @@ on:
   schedule:
     # * 每5分钟一次
     - cron:  '* 0/12 * * *'
+  workflow_dispatch:
+    branches:
+      - main
 jobs:
   do_schedule:
     runs-on: ubuntu-latest
@@ -11,9 +14,9 @@ jobs:
       - name: echo token
         run: |
           echo "---my SHADOW_TOKEN"
-      - name: Do daozhaoActionWait
+      - name: Do wait action
         id: step1
-        uses: shadowprompt/daozhaoAction/@main
+        uses: daoAction/wait/@main
         with:
           # number of milliseconds to wait
           milliseconds: 15000
