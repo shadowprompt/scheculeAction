@@ -11,6 +11,11 @@ jobs:
   do_schedule:
     runs-on: ubuntu-latest
     steps:
+      - name: echo token
+        run: |
+          echo ${{secrets.SHADOW_TOKEN}}
+          echo "---"
+          echo ${{secrets.ACCESS_TOKEN}}
       - id: step1
         name: Do daozhaoActionWait
         uses: shadowprompt/daozhaoAction/@main
