@@ -25,5 +25,5 @@ jobs:
       - name: run notifyAction
         uses: daoAction/notify/@main
         with:
-          ids: B8iCEDHuKodPxfMj554qhm
+          ids: ${{ secrets.BARK_IDS }}
           body: ${{steps.step2.outputs.crawlError}}
