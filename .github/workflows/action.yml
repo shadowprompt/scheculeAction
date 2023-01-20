@@ -19,7 +19,7 @@ jobs:
         uses: ./.github/actions/crawlAction
         with:
           timeout: 10000
-          handlerPath: shanghai/house/gycqbzf/error
+          handlerPath: shanghai/house/gdgzf
       - run: |
           echo ${{steps.step2.outputs.crawlResult}}
       - name: run notifyAction
